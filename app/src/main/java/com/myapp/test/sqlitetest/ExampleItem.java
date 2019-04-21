@@ -5,12 +5,15 @@ public class ExampleItem {
     private String text1;
     private String text2;
     private String text3;
+    private String tex4;
 
-    public ExampleItem(int imageResource, String text1, String text2, String text3) {
+
+    public ExampleItem(int imageResource, String text1, String text2, String text3, String tex4) {
         this.imageResource = imageResource;
         this.text1 = text1;
         this.text2 = text2;
         this.text3 = text3;
+        this.tex4 = tex4;
     }
 
     public int getImageResource() {
@@ -43,5 +46,13 @@ public class ExampleItem {
 
     public void setText3(String text3) {
         this.text3 = text3;
+    }
+
+    public String getTex4() {
+        return tex4;
+    }
+
+    public void setTex4(String tex4) {
+        this.tex4 = tex4;
     }
 }

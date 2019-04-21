@@ -24,6 +24,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         public TextView textView1;
         public TextView textView2;
         public TextView textView3;
+        public TextView textView4;
 
         public ExampleViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -31,6 +32,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
             textView1 = itemView.findViewById(R.id.text1);
             textView2 = itemView.findViewById(R.id.text2);
             textView3 = itemView.findViewById(R.id.text3);
+            textView4 = itemView.findViewById(R.id.price);
         }
     }
 
@@ -51,6 +53,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         exampleViewHolder.textView1.setText(currentItem.getText1());
         exampleViewHolder.textView2.setText("Марка: " + currentItem.getText2());
         exampleViewHolder.textView3.setText("Производитель: " + currentItem.getText3());
+        exampleViewHolder.textView4.setText("Цена: " + currentItem.getTex4());
+
     }
 
     @Override

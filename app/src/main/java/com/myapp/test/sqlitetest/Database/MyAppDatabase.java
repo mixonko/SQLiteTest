@@ -5,12 +5,14 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
+import com.myapp.test.sqlitetest.Dao.CarDao;
 import com.myapp.test.sqlitetest.Dao.ManufacturerDao;
 import com.myapp.test.sqlitetest.Dao.ModelDao;
+import com.myapp.test.sqlitetest.Entity.Car;
 import com.myapp.test.sqlitetest.Entity.Manufacturer;
 import com.myapp.test.sqlitetest.Entity.Model;
 
-@Database( entities = {Manufacturer.class, Model.class}, version = 1 )
+@Database( entities = {Manufacturer.class, Model.class, Car.class}, version = 1 )
 public abstract class MyAppDatabase extends RoomDatabase {
 
     private static MyAppDatabase INSTANCE;
@@ -18,6 +20,8 @@ public abstract class MyAppDatabase extends RoomDatabase {
     public abstract ManufacturerDao manufacturerDao();
 
     public abstract ModelDao modelDao();
+
+    public abstract CarDao carDao();
 
 
     public static MyAppDatabase getDatabase(Context context) {

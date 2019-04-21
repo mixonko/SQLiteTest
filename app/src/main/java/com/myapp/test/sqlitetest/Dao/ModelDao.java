@@ -18,4 +18,6 @@ public interface ModelDao {
 
     @Query("select * from models")
     public List<Model> getAllModel();
+
+
 }
