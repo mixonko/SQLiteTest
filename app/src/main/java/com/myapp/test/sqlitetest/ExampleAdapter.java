@@ -8,13 +8,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.myapp.test.sqlitetest.Entity.Car;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder> {
 
-    private ArrayList<ExampleItem> exampleItems;
+    private List<Car> exampleItems;
 
-    public ExampleAdapter(ArrayList<ExampleItem> exampleItems) {
+    public ExampleAdapter(List<Car> exampleItems) {
         this.exampleItems = exampleItems;
     }
 
@@ -47,13 +50,13 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
     @Override
     public void onBindViewHolder(@NonNull ExampleViewHolder exampleViewHolder, int i) {
-        ExampleItem currentItem = exampleItems.get(i);
+        Car currentItem = exampleItems.get(i);
 
-        exampleViewHolder.imageView.setImageResource(currentItem.getImageResource());
-        exampleViewHolder.textView1.setText(currentItem.getText1());
-        exampleViewHolder.textView2.setText("Марка: " + currentItem.getText2());
-        exampleViewHolder.textView3.setText("Производитель: " + currentItem.getText3());
-        exampleViewHolder.textView4.setText("Цена: " + currentItem.getTex4());
+//        exampleViewHolder.imageView.setImageResource(currentItem.getImageResource());
+        exampleViewHolder.textView1.setText(currentItem.getCarName());
+        exampleViewHolder.textView2.setText("Марка: " );
+        exampleViewHolder.textView3.setText(currentItem.getManufacturer());
+        exampleViewHolder.textView4.setText("Цена: " + currentItem.getPrice());
 
     }
 

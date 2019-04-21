@@ -7,8 +7,9 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "cars")
 public class Car {
-    public Car(String carName, String year, String bodyType, String engineCapacity, String enginePower, String price) {
+    public Car(String carName, String manufacturer, String year, String bodyType, String engineCapacity, String enginePower, String price) {
         this.carName = carName;
+        this.manufacturer = manufacturer;
         this.year = year;
         this.bodyType = bodyType;
         this.engineCapacity = engineCapacity;
@@ -29,6 +30,9 @@ public class Car {
 
     @ColumnInfo( name = "car_name" )
     private String carName;
+
+    @ColumnInfo( name = "manufacturer" )
+    private String manufacturer;
 
 //    @ColumnInfo( name = "photo" )
 //    private Bitmap photo;
@@ -129,5 +133,13 @@ public class Car {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 }

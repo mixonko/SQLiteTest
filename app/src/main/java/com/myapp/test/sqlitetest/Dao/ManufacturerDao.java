@@ -17,6 +17,6 @@ public interface ManufacturerDao {
     @Query("select * from manufacturers where manufacturer_name = :name")
     public Manufacturer getManufacturer(String name);
 
-    @Query("select * from manufacturers where manufacturer_name")
+    @Query("select * from manufacturers")
     public List<Manufacturer> getAllManufacturer();
 }

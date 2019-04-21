@@ -17,7 +17,7 @@ public interface CarDao {
     @Query("select * from cars where car_name = :name")
     public Car getCar(String name);
 
-    @Query("select * from cars where car_name")
+    @Query("select * from cars")
     public List<Car> getAllCar();
 
 }
