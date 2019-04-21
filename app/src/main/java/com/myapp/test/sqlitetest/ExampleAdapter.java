@@ -49,8 +49,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
         exampleViewHolder.imageView.setImageResource(currentItem.getImageResource());
         exampleViewHolder.textView1.setText(currentItem.getText1());
-        exampleViewHolder.textView2.setText(currentItem.getText2());
-        exampleViewHolder.textView3.setText(currentItem.getText3());
+        exampleViewHolder.textView2.setText("Марка: " + currentItem.getText2());
+        exampleViewHolder.textView3.setText("Производитель: " + currentItem.getText3());
     }
 
     @Override
