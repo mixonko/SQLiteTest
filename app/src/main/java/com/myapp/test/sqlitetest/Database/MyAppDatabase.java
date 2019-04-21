@@ -15,7 +15,7 @@ import com.myapp.test.sqlitetest.Entity.Model;
 @Database( entities = {Manufacturer.class, Model.class, Car.class}, version = 1 )
 public abstract class MyAppDatabase extends RoomDatabase {
 
-    private static MyAppDatabase INSTANCE;
+    public static MyAppDatabase INSTANCE;
 
     public abstract ManufacturerDao manufacturerDao();
 
@@ -32,8 +32,11 @@ public abstract class MyAppDatabase extends RoomDatabase {
                             .allowMainThreadQueries()
                             .fallbackToDestructiveMigration()
                             .build();
+
         }
         return INSTANCE;
     }
+
+
 
 }

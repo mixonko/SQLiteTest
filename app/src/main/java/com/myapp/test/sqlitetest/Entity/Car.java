@@ -7,7 +7,8 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "cars")
 public class Car {
-    public Car(String carName, String manufacturer, String year, String bodyType, String engineCapacity, String enginePower, String price) {
+    public Car(String carModel, String carName, String manufacturer, String year, String bodyType, String engineCapacity, String enginePower, String price) {
+        this.carModel = carModel;
         this.carName = carName;
         this.manufacturer = manufacturer;
         this.year = year;
@@ -16,6 +17,7 @@ public class Car {
         this.enginePower = enginePower;
         this.price = price;
     }
+
 
     @PrimaryKey( autoGenerate = true )
     private int id;
@@ -27,6 +29,9 @@ public class Car {
     @ColumnInfo( name = "id_model" )
     @ForeignKey( entity = Model.class, parentColumns = "id", childColumns = "id_model" )
     private int idModel;
+
+    @ColumnInfo( name = "car_model" )
+    private String carModel;
 
     @ColumnInfo( name = "car_name" )
     private String carName;
@@ -141,5 +146,13 @@ public class Car {
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
+    }
+
+    public String getCarModel() {
+        return carModel;
+    }
+
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
     }
 }

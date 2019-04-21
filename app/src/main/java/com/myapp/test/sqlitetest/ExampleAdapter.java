@@ -53,8 +53,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         Car currentItem = exampleItems.get(i);
 
 //        exampleViewHolder.imageView.setImageResource(currentItem.getImageResource());
-        exampleViewHolder.textView1.setText(currentItem.getCarName());
-        exampleViewHolder.textView2.setText("Марка: " );
+        exampleViewHolder.textView1.setText(currentItem.getCarModel());
+        exampleViewHolder.textView2.setText(currentItem.getCarName());
         exampleViewHolder.textView3.setText(currentItem.getManufacturer());
         exampleViewHolder.textView4.setText("Цена: " + currentItem.getPrice());
 
