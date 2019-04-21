@@ -6,6 +6,9 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "manufacturers")
 public class Manufacturer {
+    public Manufacturer(String name) {
+        this.name = name;
+    }
 
     @PrimaryKey(autoGenerate = true)
     private int id;
