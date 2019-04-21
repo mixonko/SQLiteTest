@@ -4,18 +4,17 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "manufacturers")
+@Entity( tableName = "manufacturers" )
 public class Manufacturer {
     public Manufacturer(String name) {
         this.name = name;
     }
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey( autoGenerate = true )
     private int id;
 
-    @ColumnInfo (name = "manufacturer_name")
+    @ColumnInfo( name = "manufacturer_name" )
     private String name;
-
 
     public int getId() {
         return id;

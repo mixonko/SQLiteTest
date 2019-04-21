@@ -4,14 +4,17 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "models")
 public class Model {
+    public Model(String name) {
+        this.name = name;
+    }
 
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    @ColumnInfo(name = "model")
-    private String model;
+    @ColumnInfo(name = "model_name")
+    private String name;
 
     public int getId() {
         return id;
@@ -21,11 +24,11 @@ public class Model {
         this.id = id;
     }
 
-    public String getModel() {
-        return model;
+    public String getName() {
+        return name;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setName(String name) {
+        this.name = name;
     }
 }

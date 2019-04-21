@@ -13,6 +13,9 @@ public interface ModelDao {
     @Insert
     public void addModel(Model model);
 
-    @Query("select * from model")
+    @Query("select * from models where model_name = :name")
+    public Model getModel(String name);
+
+    @Query("select * from models")
     public List<Model> getAllModel();
 }
