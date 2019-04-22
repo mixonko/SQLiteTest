@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -77,6 +78,15 @@ public class CarInfoActivity extends Activity implements View.OnClickListener {
                 price.setOnClickListener(CarInfoActivity.this);
                 save.setVisibility(View.VISIBLE);
                 change.setVisibility(View.INVISIBLE);
+
+                carModel.setTextColor(Color.RED);
+                carName.setTextColor(Color.RED);
+                manufacturer.setTextColor(Color.RED);
+                year.setTextColor(Color.RED);
+                bodyType.setTextColor(Color.RED);
+                engineCapacity.setTextColor(Color.RED);
+                enginePower.setTextColor(Color.RED);
+                price.setTextColor(Color.RED);
             }
         });
 
@@ -100,6 +110,15 @@ public class CarInfoActivity extends Activity implements View.OnClickListener {
                 engineCapacity.setClickable(false);
                 enginePower.setClickable(false);
                 price.setClickable(false);
+
+                carModel.setTextColor(Color.BLACK);
+                carName.setTextColor(Color.BLACK);
+                manufacturer.setTextColor(Color.BLACK);
+                year.setTextColor(Color.BLACK);
+                bodyType.setTextColor(Color.BLACK);
+                engineCapacity.setTextColor(Color.BLACK);
+                enginePower.setTextColor(Color.BLACK);
+                price.setTextColor(Color.BLACK);
 
                 save.setVisibility(View.INVISIBLE);
                 change.setVisibility(View.VISIBLE);

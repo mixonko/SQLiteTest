@@ -1,7 +1,6 @@
 package com.myapp.test.sqlitetest;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -59,7 +58,10 @@ public class InsertCarActyvity extends Activity {
 
     private void saveCar(){
 
-        if (carModel.getText().toString().isEmpty()||carName.getText().toString().isEmpty()){
+        if (carModel.getText().toString().isEmpty()||carName.getText().toString().isEmpty()
+                ||manufacturer.getText().toString().isEmpty()||year.getText().toString().isEmpty()
+                ||bodyType.getText().toString().isEmpty()||engineCapacity.getText().toString().isEmpty()
+                ||enginePower.getText().toString().isEmpty()||price.getText().toString().isEmpty()){
             Toast.makeText(InsertCarActyvity.this, "Введите данные", Toast.LENGTH_SHORT).show();
         }else{
             Car car = new Car(carModel.getText().toString(),

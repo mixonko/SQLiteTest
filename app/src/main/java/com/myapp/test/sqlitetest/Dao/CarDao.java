@@ -28,4 +28,8 @@ public interface CarDao {
     @Update
     public void update(Car car);
 
+    @Query("select * from cars  ORDER BY price ")
+    public List<Car> getAllCarPriceSorted();
+
+
 }

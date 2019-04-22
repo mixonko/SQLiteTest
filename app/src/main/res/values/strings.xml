@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">SQLiteTest</string>
+    <string name="model">Модель:</string>
+    <string name="name">Наименование:</string>
+    <string name="manufacturer">Производитель:</string>
+    <string name="year">Год выпуска:</string>
+    <string name="body_type">Тип кузова:</string>
+    <string name="engine_capacity">Объем двигателя:</string>
+    <string name="engine_power">Мощность двигателя:</string>
+    <string name="price">Цена:</string>
+    <string name="button_save">Сохранить</string>
+    <string name="button_change">Изменить</string>
 </resources>
