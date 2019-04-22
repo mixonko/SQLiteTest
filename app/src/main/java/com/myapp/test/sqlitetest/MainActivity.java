@@ -101,8 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        List<Car> cars = database.carDao().getAllCar();
-        b.setText(String.valueOf(cars.size()));
+         database.carDao()
     }
 
     public void insertItem(int position){

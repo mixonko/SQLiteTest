@@ -36,5 +36,14 @@ public class CarInfoActivity extends Activity {
         price= findViewById(R.id.price);
 
         Car car = MainActivity.cars.get(Integer.parseInt(getIntent().getStringExtra(MainActivity.CAR)));
+
+        carModel.setText(car.getCarModel());
+        carName.setText(car.getCarName());
+        manufacturer.setText(car.getManufacturer());
+        year.setText(car.getYear());
+        bodyType.setText(car.getBodyType());
+        engineCapacity .setText(car.getEngineCapacity());
+        enginePower.setText(car.getEnginePower());
+        price.setText(car.getPrice());
     }
 }
