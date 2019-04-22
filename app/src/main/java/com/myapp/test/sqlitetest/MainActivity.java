@@ -17,7 +17,7 @@ import com.myapp.test.sqlitetest.Entity.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ExampleAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button addCar;
     public static List<Car> cars;
     public static final String CAR = "car";
-    Button b;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         cars = database.carDao().getAllCar();
 
-        b = findViewById(R.id.button);
         addCar = findViewById(R.id.addCar);
-        addCar.setOnClickListener(this);
-        b.setOnClickListener(this);
-
 
         recyclerView = findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(this);
@@ -51,16 +47,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
+
         adapter.setOnItemClickListener(new ExampleAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Intent intent = new Intent(MainActivity.this, CarInfoActivity.class);
-                intent.putExtra(CAR, String.valueOf(position));
-                startActivity(intent);
-
+                carInfo(position);
             }
         });
-
         adapter.setOnItemLongClickListener(new ExampleAdapter.OnItemLongClickListener() {
             @Override
             public void onItemLongClick(int position) {
@@ -68,9 +61,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-
+        addCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insertItem();
+            }
+        });
     }
-
 
     private void fillManufacturer() {
         database.manufacturerDao().addManufacturer(new Manufacturer("Япония"));
@@ -106,12 +103,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    @Override
-    public void onClick(View view) {
 
+
+    private void carInfo(int position) {
+        Intent intent = new Intent(MainActivity.this, CarInfoActivity.class);
+        intent.putExtra(CAR, String.valueOf(position));
+        startActivity(intent);
     }
 
-    public void insertItem(int position){
+    public void insertItem(){
 
     }
 

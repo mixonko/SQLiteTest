@@ -3,7 +3,10 @@ package com.myapp.test.sqlitetest.Entity;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
+
+import com.myapp.test.sqlitetest.R;
 
 @Entity(tableName = "cars")
 public class Car {
@@ -19,6 +22,18 @@ public class Car {
         this.price = price;
     }
 
+    @Ignore
+    public Car(String carModel, String carName, String manufacturer, String year, String bodyType, String engineCapacity, String enginePower, String price) {
+        this.carModel = carModel;
+        this.carName = carName;
+        this.manufacturer = manufacturer;
+        this.year = year;
+        this.bodyType = bodyType;
+        this.engineCapacity = engineCapacity;
+        this.enginePower = enginePower;
+        this.price = price;
+        this.photo = R.drawable.car;
+    }
 
     @PrimaryKey( autoGenerate = true )
     private int id;
