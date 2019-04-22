@@ -2,56 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#d9d9d9"  >
+    android:background="#d9d9d9"
+    android:orientation="vertical">
 
 
     <EditText
         android:id="@+id/carModel"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content"  />
 
     <EditText
         android:id="@+id/carName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content"  />
 
     <EditText
         android:id="@+id/manufacturer"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content"  />
 
     <EditText
         android:id="@+id/year"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content"  />
 
     <EditText
         android:id="@+id/bodyType"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content"  />
 
     <EditText
         android:id="@+id/engineCapacity"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content"  />
 
     <EditText
         android:id="@+id/enginePower"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content"  />
 
     <EditText
         android:id="@+id/price"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"  />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Сохранить"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Отмена"
+        android:textAllCaps="false" />
 
 </LinearLayout>

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#d9d9d9"  >
+    android:background="#d9d9d9"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_gravity="center|top"/>
+        android:layout_gravity="center|top" />
 
     <TextView
         android:id="@+id/carModel"
@@ -59,4 +60,38 @@
         android:layout_height="wrap_content"
         android:text="TextView" />
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/change"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Изменить"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Сохранить"
+            android:textAllCaps="false"
+            android:visibility="invisible" />
+
+    </FrameLayout>
+
+
+
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Отмена"
+        android:textAllCaps="false"
+        android:visibility="invisible" />
+
 </LinearLayout>
+
+

@@ -1,4 +1,4 @@
-package com.myapp.test.sqlitetest;
+package com.myapp.test.sqlitetest.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.myapp.test.sqlitetest.Entity.Car;
+import com.myapp.test.sqlitetest.R;
 
 import java.util.List;
 

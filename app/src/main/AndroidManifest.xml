@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CarInfoActivity"/>
+        <activity android:name=".InsertCarActyvity"/>
     </application>
 
 </manifest>
