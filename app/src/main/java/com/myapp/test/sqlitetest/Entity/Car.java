@@ -38,10 +38,6 @@ public class Car {
     @PrimaryKey( autoGenerate = true )
     private int id;
 
-    @ColumnInfo( name = "id_manufacturer" )
-    @ForeignKey( entity = Manufacturer.class, parentColumns = "id", childColumns = "id_manufacturer" )
-    private int idManufacturer;
-
     @ColumnInfo( name = "id_model" )
     @ForeignKey( entity = Model.class, parentColumns = "id", childColumns = "id_model" )
     private int idModel;
@@ -73,23 +69,12 @@ public class Car {
     @ColumnInfo( name = "price" )
     private int price;
 
-
-
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getIdManufacturer() {
-        return idManufacturer;
-    }
-
-    public void setIdManufacturer(int idManufacturer) {
-        this.idManufacturer = idManufacturer;
     }
 
     public int getIdModel() {

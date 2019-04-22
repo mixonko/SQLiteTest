@@ -135,46 +135,46 @@ public class CarInfoActivity extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.carModel:
-                changeInfo(carModel.getText().toString(), carModel);
+                changeInfo(carModel.getText().toString(), carModel, "Модель:");
                 break;
 
             case R.id.carName:
-                changeInfo(carName.getText().toString(), carName);
+                changeInfo(carName.getText().toString(), carName, "Наименование:");
                 break;
 
             case R.id.manufacturer:
-                changeInfo(manufacturer.getText().toString(), manufacturer);
+                changeInfo(manufacturer.getText().toString(), manufacturer, "Производитель:");
                 break;
 
             case R.id.year:
-                changeInfo(year.getText().toString(), year);
+                changeInfo(year.getText().toString(), year, "Год выпуска:");
                 break;
 
             case R.id.bodyType:
-                changeInfo(bodyType.getText().toString(), bodyType);
+                changeInfo(bodyType.getText().toString(), bodyType, "Тип корпуса:");
                 break;
 
             case R.id.engineCapacity:
-                changeInfo(engineCapacity.getText().toString(), engineCapacity);
+                changeInfo(engineCapacity.getText().toString(), engineCapacity, "Объем двигателя:");
                 break;
 
             case R.id.enginePower:
-                changeInfo(enginePower.getText().toString(), enginePower);
+                changeInfo(enginePower.getText().toString(), enginePower, "Мощность двигателя:");
                 break;
 
             case R.id.price:
-                changeInfo(price.getText().toString(), price);
+                changeInfo(price.getText().toString(), price, "Цена:");
                 break;
         }
 
     }
-    private void changeInfo(String s, final TextView tv){
+    private void changeInfo(String carIfo, final TextView tv, String info){
         final AlertDialog.Builder builder = new AlertDialog.Builder(CarInfoActivity.this);
         final EditText et = new EditText(CarInfoActivity.this);
-        et.setText(s);
+        et.setText(carIfo);
         builder.setView( et);
-        builder.setTitle("Изменение")
-                .setMessage("asd")
+        builder.setTitle("Измененить")
+                .setMessage(info)
                 .setPositiveButton("Сохранить", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

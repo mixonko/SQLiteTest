@@ -5,33 +5,28 @@
     android:background="#d9d9d9"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/addCar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/ic_add_car"
-        android:layout_gravity="right"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <CheckBox
-        android:id="@+id/sortByPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Сортировать по цене"
-        android:textColor="#111" />
+        <Button
+            android:id="@+id/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_details" />
 
-    <CheckBox
-        android:id="@+id/manufacturerFilter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Сортировать по цене"
-        android:textColor="#111" />
 
-    <CheckBox
-        android:id="@+id/modelFilter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Сортировать по цене"
-        android:textColor="#111" />
+        <Button
+            android:id="@+id/addCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_add_car"
+            android:layout_gravity="right"/>
+
+
+    </FrameLayout>
+
+
 
 
     <android.support.v7.widget.RecyclerView
