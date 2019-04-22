@@ -1,11 +1,13 @@
 package com.myapp.test.sqlitetest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.myapp.test.sqlitetest.Database.MyAppDatabase;
 import com.myapp.test.sqlitetest.Entity.Car;
@@ -15,11 +17,14 @@ import com.myapp.test.sqlitetest.Entity.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    private ExampleAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private MyAppDatabase database;
+    private Button addCar;
+    public static List<Car> cars;
+    public static final String CAR = "car";
     Button b;
 
     @Override
@@ -32,9 +37,12 @@ public class MainActivity extends AppCompatActivity {
         fillModel();
         fillCar();
 
-        List<Car> cars = database.carDao().getAllCar();
+        cars = database.carDao().getAllCar();
 
         b = findViewById(R.id.button);
+        addCar = findViewById(R.id.addCar);
+        addCar.setOnClickListener(this);
+        b.setOnClickListener(this);
 
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -43,15 +51,17 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
-
-        b.setOnClickListener(new View.OnClickListener() {
+        adapter.setOnItemClickListener(new ExampleAdapter.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                List<Car> cars = database.carDao().getAllCar();
-                b.setText(String.valueOf(cars.size()));
+            public void onItemClick(int position) {
+                Intent intent = new Intent(MainActivity.this, CarInfoActivity.class);
+                intent.putExtra(CAR, String.valueOf(position));
+                startActivity(intent);
 
             }
         });
+
+
     }
 
 
@@ -86,6 +96,20 @@ public class MainActivity extends AppCompatActivity {
         database.carDao().addCar(new Car("Opel","Calibra 2.0","Германия", "1991 г.", "купе 2 дв.", "1998 cм3", "115 л.с.", "90 000 Р"));
         database.carDao().addCar(new Car("Opel", "Omega B 2.0","Германия", "сентябрь 1995 г.", "седан 4 дв.", "1998 cм3", "136 л.с.", "75 000 Р"));
         database.carDao().addCar(new Car("Opel", "Zafira 1.6","Германия", "ноябрь 2000 г.", "минивэн 5 дв.", "1598 cм3", "101 л.с.", "296 280 Р"));
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        List<Car> cars = database.carDao().getAllCar();
+        b.setText(String.valueOf(cars.size()));
+    }
+
+    public void insertItem(int position){
+
+    }
+
+    public void removeItem(int position){
 
     }
 }
