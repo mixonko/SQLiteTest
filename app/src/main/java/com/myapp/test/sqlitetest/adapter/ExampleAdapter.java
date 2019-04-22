@@ -104,7 +104,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         exampleViewHolder.textView1.setText(currentItem.getCarModel());
         exampleViewHolder.textView2.setText(currentItem.getCarName());
         exampleViewHolder.textView3.setText(currentItem.getManufacturer());
-        exampleViewHolder.textView4.setText("Цена: " + currentItem.getPrice());
+        exampleViewHolder.textView4.setText("Цена: " + String.valueOf(currentItem.getPrice()));
 
     }
 

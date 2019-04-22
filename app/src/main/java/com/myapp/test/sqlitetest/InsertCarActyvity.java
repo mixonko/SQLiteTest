@@ -71,7 +71,7 @@ public class InsertCarActyvity extends Activity {
                     bodyType.getText().toString(),
                     engineCapacity.getText().toString(),
                     enginePower.getText().toString(),
-                    price.getText().toString());
+                    Integer.parseInt(price.getText().toString()));
             MainActivity.database.carDao().addCar(car);
             cars.add(car);
             finish();

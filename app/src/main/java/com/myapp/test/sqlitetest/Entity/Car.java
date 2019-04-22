@@ -10,7 +10,7 @@ import com.myapp.test.sqlitetest.R;
 
 @Entity(tableName = "cars")
 public class Car {
-    public Car(String carModel, String carName, String manufacturer, int photo, String year, String bodyType, String engineCapacity, String enginePower, String price) {
+    public Car(String carModel, String carName, String manufacturer, int photo, String year, String bodyType, String engineCapacity, String enginePower, int price) {
         this.carModel = carModel;
         this.carName = carName;
         this.manufacturer = manufacturer;
@@ -23,7 +23,7 @@ public class Car {
     }
 
     @Ignore
-    public Car(String carModel, String carName, String manufacturer, String year, String bodyType, String engineCapacity, String enginePower, String price) {
+    public Car(String carModel, String carName, String manufacturer, String year, String bodyType, String engineCapacity, String enginePower, int price) {
         this.carModel = carModel;
         this.carName = carName;
         this.manufacturer = manufacturer;
@@ -71,7 +71,7 @@ public class Car {
     private String enginePower;
 
     @ColumnInfo( name = "price" )
-    private String price;
+    private int price;
 
 
 
@@ -148,11 +148,11 @@ public class Car {
         this.enginePower = enginePower;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

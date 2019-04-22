@@ -2,37 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#d9d9d9"  >
+    android:background="#d9d9d9"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <Button
+        android:id="@+id/addCar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="@mipmap/ic_add_car"
+        android:layout_gravity="right"/>
 
-        <Button
-            android:id="@+id/details"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/ic_details"
-            android:layout_gravity="right"   />
+    <CheckBox
+        android:id="@+id/sortByPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сортировать по цене"
+        android:textColor="#111" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
+    <CheckBox
+        android:id="@+id/manufacturerFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сортировать по цене"
+        android:textColor="#111" />
 
+    <CheckBox
+        android:id="@+id/modelFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сортировать по цене"
+        android:textColor="#111" />
 
-
-        <Button
-            android:id="@+id/addCar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="@mipmap/ic_add_car"  />
-
-
-    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -41,5 +41,6 @@
 
 
     </android.support.v7.widget.RecyclerView>
+
 
 </LinearLayout>

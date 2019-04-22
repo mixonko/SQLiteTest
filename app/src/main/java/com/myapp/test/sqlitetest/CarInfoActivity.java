@@ -63,7 +63,7 @@ public class CarInfoActivity extends Activity implements View.OnClickListener {
         bodyType.setText(car.getBodyType());
         engineCapacity .setText(car.getEngineCapacity());
         enginePower.setText(car.getEnginePower());
-        price.setText(car.getPrice());
+        price.setText(String.valueOf(car.getPrice()));
 
         change.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +100,7 @@ public class CarInfoActivity extends Activity implements View.OnClickListener {
                 car.setBodyType(bodyType.getText().toString());
                 car.setEngineCapacity(engineCapacity.getText().toString());
                 car.setEnginePower(enginePower.getText().toString());
-                car.setPrice(price.getText().toString());
+                car.setPrice(Integer.parseInt(price.getText().toString()));
 
                 carModel.setClickable(false);
                 carName.setClickable(false);
