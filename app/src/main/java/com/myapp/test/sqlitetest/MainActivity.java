@@ -61,6 +61,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        adapter.setOnItemLongClickListener(new ExampleAdapter.OnItemLongClickListener() {
+            @Override
+            public void onItemLongClick(int position) {
+                 removeItem(position);
+            }
+        });
+
 
     }
 
@@ -101,17 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-// convert from bitmap to byte array
 
-//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//            bitmap.compress(CompressFormat.PNG, 0, stream);
-//            return stream.toByteArray();
-//
-//
-//        // convert from byte array to bitmap
-//        public static Bitmap getImage(byte[] image) {
-//            return BitmapFactory.decodeByteArray(image, 0, image.length);
-//        }
     }
 
     public void insertItem(int position){
@@ -119,6 +116,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void removeItem(int position){
+
+        Car car = cars.get(position);
+        cars.remove(position);
+        database.carDao().removeCar(car);
+        adapter.notifyItemRemoved(position);
+
 
     }
 }

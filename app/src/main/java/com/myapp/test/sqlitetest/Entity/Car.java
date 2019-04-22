@@ -20,7 +20,6 @@ public class Car {
     }
 
 
-
     @PrimaryKey( autoGenerate = true )
     private int id;
 

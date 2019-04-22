@@ -1,6 +1,7 @@
 package com.myapp.test.sqlitetest.Dao;
 
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
@@ -19,5 +20,8 @@ public interface CarDao {
 
     @Query("select * from cars")
     public List<Car> getAllCar();
+
+    @Delete
+    public void removeCar(Car car);
 
 }
