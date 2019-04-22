@@ -1,19 +1,12 @@
 package com.myapp.test.sqlitetest;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Base64;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.myapp.test.sqlitetest.Database.MyAppDatabase;
@@ -22,7 +15,6 @@ import com.myapp.test.sqlitetest.Entity.Manufacturer;
 import com.myapp.test.sqlitetest.Entity.Model;
 import com.myapp.test.sqlitetest.adapter.ExampleAdapter;
 
-import java.io.ByteArrayOutputStream;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,12 +24,9 @@ public class MainActivity extends AppCompatActivity {
     public static MyAppDatabase database;
     private Button addCar;
     private Button filter;
-//    private CheckBox sortByPrice;
-//    private CheckBox manufacturerFilter;
-//    private CheckBox modelFilter;
     public static List<Car> cars;
     public static final String CAR = "car";
-
+    public static final int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivityForResult(new Intent(MainActivity.this, FilterActivity.class), REQUEST_CODE);
             }
         });
 

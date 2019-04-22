@@ -33,7 +33,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundColor" value="d9d9d9" />
+                                      <entry key="backgroundColor" value="e6e6e6" />
                                       <entry key="iconShape" value="HRECT" />
                                       <entry key="outputName" value="ic_details" />
                                     </map>

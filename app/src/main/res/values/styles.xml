@@ -12,7 +12,7 @@
         <!-- Customize your theme here. -->
         <item name="android:textColor">#111</item>
         <item name="android:textColorHint">#a15d5d</item>
-        <item name="android:textSize">13dp</item>
+        <item name="android:textSize">13sp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:maxLength">20</item>
