@@ -7,16 +7,18 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "cars")
 public class Car {
-    public Car(String carModel, String carName, String manufacturer, String year, String bodyType, String engineCapacity, String enginePower, String price) {
+    public Car(String carModel, String carName, String manufacturer, int photo, String year, String bodyType, String engineCapacity, String enginePower, String price) {
         this.carModel = carModel;
         this.carName = carName;
         this.manufacturer = manufacturer;
+        this.photo = photo;
         this.year = year;
         this.bodyType = bodyType;
         this.engineCapacity = engineCapacity;
         this.enginePower = enginePower;
         this.price = price;
     }
+
 
 
     @PrimaryKey( autoGenerate = true )
@@ -39,8 +41,8 @@ public class Car {
     @ColumnInfo( name = "manufacturer" )
     private String manufacturer;
 
-//    @ColumnInfo( name = "photo" )
-//    private Bitmap photo;
+    @ColumnInfo( name = "photo" )
+    private int photo;
 
     @ColumnInfo( name = "year" )
     private String year;
@@ -92,13 +94,13 @@ public class Car {
         this.carName = carName;
     }
 
-//    public Bitmap getPhoto() {
-//        return photo;
-//    }
-//
-//    public void setPhoto(Bitmap photo) {
-//        this.photo = photo;
-//    }
+    public int getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(int photo) {
+        this.photo = photo;
+    }
 
     public String getYear() {
         return year;

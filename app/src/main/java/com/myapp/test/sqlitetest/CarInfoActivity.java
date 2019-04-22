@@ -37,6 +37,7 @@ public class CarInfoActivity extends Activity {
 
         Car car = MainActivity.cars.get(Integer.parseInt(getIntent().getStringExtra(MainActivity.CAR)));
 
+        image.setImageResource(car.getPhoto());
         carModel.setText(car.getCarModel());
         carName.setText(car.getCarName());
         manufacturer.setText(car.getManufacturer());
