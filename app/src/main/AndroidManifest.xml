@@ -18,7 +18,6 @@
         </activity>
         <activity android:name=".CarInfoActivity"/>
         <activity android:name=".InsertCarActyvity"/>
-        <activity android:name=".FilterActivity"/>
     </application>
 
 </manifest>

@@ -31,5 +31,7 @@ public interface CarDao {
     @Query("select * from cars  ORDER BY price ")
     public List<Car> getAllCarPriceSorted();
 
+    @Query("select * from cars  ORDER BY price DESC")
+    public List<Car> getAllCarPriceSortedDESC();
 
 }
