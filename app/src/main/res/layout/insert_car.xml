@@ -46,7 +46,8 @@
         android:id="@+id/price"
         style="@style/text"
         android:hint="@string/price"
-        android:inputType="number"/>
+        android:inputType="number"
+        />
 
     <Button
         android:id="@+id/save"

@@ -94,8 +94,7 @@
 
             <TextView
                 android:id="@+id/price"
-                style="@style/text"
-                />
+                style="@style/text" />
 
         </LinearLayout>
 

@@ -3,7 +3,6 @@ package com.myapp.test.sqlitetest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,14 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ViewSwitcher;
 
 import com.myapp.test.sqlitetest.Entity.Car;
 
-import static com.myapp.test.sqlitetest.MainActivity.cars;
 
 public class CarInfoActivity extends Activity implements View.OnClickListener {
     private ImageView image;
