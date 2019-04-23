@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.myapp.test.sqlitetest.Entity.Car;
 import com.myapp.test.sqlitetest.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder> {
@@ -113,5 +114,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         return exampleItems.size();
     }
 
-
+    public void filterList(List<Car> filterList){
+        exampleItems = filterList;
+        notifyDataSetChanged();
+    }
 }

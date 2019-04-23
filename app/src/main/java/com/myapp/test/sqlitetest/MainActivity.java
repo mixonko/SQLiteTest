@@ -7,8 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -16,6 +19,7 @@ import com.myapp.test.sqlitetest.Database.MyAppDatabase;
 import com.myapp.test.sqlitetest.Entity.Car;
 import com.myapp.test.sqlitetest.adapter.ExampleAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     public static MyAppDatabase database;
     private Button addCar;
     private RadioGroup radioGroup;
+    private EditText search;
+    private List<Car> filteList;
     public static List<Car> cars;
     public static final String CAR = "car";
 
@@ -34,12 +40,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         database = MyAppDatabase.getDatabase(getApplicationContext());
-        new FillDataBase();
+
+        if(database.carDao().getAllCar().size()==0){
+            new FillDataBase();
+        }
 
         cars = database.carDao().getAllCar();
 
         recyclerView = findViewById(R.id.recyclerView);
         addCar = findViewById(R.id.addCar);
+        search = findViewById(R.id.search);
+
 
         createRecyclerVeiew(cars);
 
@@ -57,23 +68,45 @@ public class MainActivity extends AppCompatActivity {
                 if(radioGroup.getCheckedRadioButtonId() == R.id.none) {
                     cars = database.carDao().getAllCar();
                     createRecyclerVeiew(cars);
+                    filter(search.getText().toString());
                 }
 
                 if(radioGroup.getCheckedRadioButtonId() == R.id.sortB) {
                     cars = database.carDao().getAllCarPriceSortedDESC();
                     createRecyclerVeiew(cars);
+                    filter(search.getText().toString());
                 }
 
 
                 if(radioGroup.getCheckedRadioButtonId() == R.id.sortA) {
                     cars = database.carDao().getAllCarPriceSorted();
                     createRecyclerVeiew(cars);
+                    filter(search.getText().toString());
                 }
 
             }
         });
 
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filter(search.getText().toString());
+            }
+        });
+
     }
+
+
 
     private void createRecyclerVeiew(final List<Car> cars) {
         layoutManager = new LinearLayoutManager(this);
@@ -123,12 +156,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void removeItem(int position) {
-        Car car = cars.get(position);
-        cars.remove(position);
-        database.carDao().removeCar(car);
-        adapter.notifyItemRemoved(position);
-        Toast.makeText(MainActivity.this,  car.getCarModel() + car.getCarName() + " удален", Toast.LENGTH_SHORT).show();
+        if(search.getText().toString().isEmpty()) {
+            Car car = cars.get(position);
+            cars.remove(position);
+            database.carDao().removeCar(car);
+            adapter.notifyItemRemoved(position);
+            Toast.makeText(MainActivity.this, car.getCarModel() + " " + car.getCarName() + " удален", Toast.LENGTH_SHORT).show();
+        }else {
+            Car car = filteList.get(position);
+            filteList.remove(position);
+            database.carDao().removeCar(car);
+            adapter.notifyItemRemoved(position);
+            Toast.makeText(MainActivity.this, car.getCarModel() + " " + car.getCarName() + " удален", Toast.LENGTH_SHORT).show();
+        }
 
+    }
+
+    private void filter(String text) {
+        filteList = new ArrayList<>();
+        for (Car car: cars){
+            if(car.getCarName().toLowerCase().contains(text.toLowerCase())
+                    || car.getCarModel().toLowerCase().contains(text.toLowerCase())
+                    || car.getManufacturer().toLowerCase().contains(text.toLowerCase())){
+                filteList.add(car);
+            }else {
+                cars = database.carDao().getAllCar();
+            }
+        }
+        adapter.filterList(filteList);
     }
 
     @Override

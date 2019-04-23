@@ -74,6 +74,7 @@ public class InsertCarActyvity extends Activity {
                     Integer.parseInt(price.getText().toString()));
             MainActivity.database.carDao().addCar(car);
             cars.add(car);
+            Toast.makeText(InsertCarActyvity.this, car.getCarModel() + " " + car.getCarName() + " добавлен", Toast.LENGTH_SHORT).show();
             finish();
         }
 
