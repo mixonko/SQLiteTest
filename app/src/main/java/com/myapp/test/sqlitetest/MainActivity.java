@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
- 
+
     }
 
     private void createRecyclerVeiew(final List<Car> cars) {
