@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         cars.remove(position);
         database.carDao().removeCar(car);
         adapter.notifyItemRemoved(position);
-        Toast.makeText(MainActivity.this, car.getCarName() + " удален", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this,  car.getCarModel() + car.getCarName() + " удален", Toast.LENGTH_SHORT).show();
 
     }
 
