@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         database = MyAppDatabase.getDatabase(getApplicationContext());
 
-        if(database.carDao().getAllCar().size()==0){
+        if (database.carDao().getAllCar().size() == 0) {
             new FillDataBase();
         }
 
@@ -65,20 +65,20 @@ public class MainActivity extends AppCompatActivity {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if(radioGroup.getCheckedRadioButtonId() == R.id.none) {
+                if (radioGroup.getCheckedRadioButtonId() == R.id.none) {
                     cars = database.carDao().getAllCar();
                     createRecyclerVeiew(cars);
                     filter(search.getText().toString());
                 }
 
-                if(radioGroup.getCheckedRadioButtonId() == R.id.sortB) {
+                if (radioGroup.getCheckedRadioButtonId() == R.id.sortB) {
                     cars = database.carDao().getAllCarPriceSortedDESC();
                     createRecyclerVeiew(cars);
                     filter(search.getText().toString());
                 }
 
 
-                if(radioGroup.getCheckedRadioButtonId() == R.id.sortA) {
+                if (radioGroup.getCheckedRadioButtonId() == R.id.sortA) {
                     cars = database.carDao().getAllCarPriceSorted();
                     createRecyclerVeiew(cars);
                     filter(search.getText().toString());
@@ -105,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
 
 
     private void createRecyclerVeiew(final List<Car> cars) {
@@ -156,13 +155,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void removeItem(int position) {
-        if(search.getText().toString().isEmpty()) {
+        if (search.getText().toString().isEmpty()) {
             Car car = cars.get(position);
             cars.remove(position);
             database.carDao().removeCar(car);
             adapter.notifyItemRemoved(position);
             Toast.makeText(MainActivity.this, car.getCarModel() + " " + car.getCarName() + " удален", Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             Car car = filteList.get(position);
             filteList.remove(position);
             database.carDao().removeCar(car);
@@ -174,12 +173,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void filter(String text) {
         filteList = new ArrayList<>();
-        for (Car car: cars){
-            if(car.getCarName().toLowerCase().contains(text.toLowerCase())
+        for (Car car : cars) {
+            if (car.getCarName().toLowerCase().contains(text.toLowerCase())
                     || car.getCarModel().toLowerCase().contains(text.toLowerCase())
-                    || car.getManufacturer().toLowerCase().contains(text.toLowerCase())){
+                    || car.getManufacturer().toLowerCase().contains(text.toLowerCase())) {
                 filteList.add(car);
              
+            }
         }
         adapter.filterList(filteList);
     }
