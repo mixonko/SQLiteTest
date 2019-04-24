@@ -179,9 +179,7 @@ public class MainActivity extends AppCompatActivity {
                     || car.getCarModel().toLowerCase().contains(text.toLowerCase())
                     || car.getManufacturer().toLowerCase().contains(text.toLowerCase())){
                 filteList.add(car);
-            }else {
-                cars = database.carDao().getAllCar();
-            }
+             
         }
         adapter.filterList(filteList);
     }
@@ -189,7 +187,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        adapter.notifyDataSetChanged();
+        cars = database.carDao().getAllCar();
+        createRecyclerVeiew(cars);
     }
 
 
