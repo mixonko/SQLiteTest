@@ -1,4 +1,4 @@
-package com.myapp.test.sqlitetest.Dao;
+package com.myapp.test.sqlitetest.dao;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
@@ -6,7 +6,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.myapp.test.sqlitetest.Entity.Car;
+import com.myapp.test.sqlitetest.entity.Car;
 
 import java.util.List;
 

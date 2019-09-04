@@ -1,34 +1,12 @@
 package com.myapp.test.sqlitetest;
 
-import com.myapp.test.sqlitetest.Entity.Car;
-import com.myapp.test.sqlitetest.Entity.Manufacturer;
-import com.myapp.test.sqlitetest.Entity.Model;
+import com.myapp.test.sqlitetest.entity.Car;
 
 import static com.myapp.test.sqlitetest.MainActivity.database;
 
 public class FillDataBase {
     public FillDataBase() {
-        fillManufacturer();
-        fillModel();
         fillCar();
-    }
-
-    private void fillManufacturer() {
-        database.manufacturerDao().addManufacturer(new Manufacturer("Япония"));
-        database.manufacturerDao().addManufacturer(new Manufacturer("Китай"));
-        database.manufacturerDao().addManufacturer(new Manufacturer("Германия"));
-    }
-
-    private void fillModel() {
-        database.modelDao().addModel(new Model("Toyota"));
-        database.modelDao().addModel(new Model("Nissan"));
-        database.modelDao().addModel(new Model("Mazda"));
-        database.modelDao().addModel(new Model("Geely"));
-        database.modelDao().addModel(new Model("Chery"));
-        database.modelDao().addModel(new Model("Lifan"));
-        database.modelDao().addModel(new Model("Audi"));
-        database.modelDao().addModel(new Model("Volkswagen"));
-        database.modelDao().addModel(new Model("Opel"));
     }
 
     private void fillCar() {

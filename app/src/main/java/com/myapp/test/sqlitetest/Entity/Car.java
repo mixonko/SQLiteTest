@@ -1,4 +1,4 @@
-package com.myapp.test.sqlitetest.Entity;
+package com.myapp.test.sqlitetest.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -38,10 +38,6 @@ public class Car {
     @PrimaryKey( autoGenerate = true )
     private int id;
 
-    @ColumnInfo( name = "id_model" )
-    @ForeignKey( entity = Model.class, parentColumns = "id", childColumns = "id_model" )
-    private int idModel;
-
     @ColumnInfo( name = "car_model" )
     private String carModel;
 
@@ -75,14 +71,6 @@ public class Car {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getIdModel() {
-        return idModel;
-    }
-
-    public void setIdModel(int idModel) {
-        this.idModel = idModel;
     }
 
     public String getCarName() {

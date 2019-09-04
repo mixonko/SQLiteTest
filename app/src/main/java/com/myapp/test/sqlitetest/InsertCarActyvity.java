@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.myapp.test.sqlitetest.Entity.Car;
+import com.myapp.test.sqlitetest.entity.Car;
 
 import static com.myapp.test.sqlitetest.MainActivity.cars;
 

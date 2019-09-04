@@ -8,10 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.myapp.test.sqlitetest.Entity.Car;
+import com.myapp.test.sqlitetest.entity.Car;
 import com.myapp.test.sqlitetest.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder> {
@@ -43,8 +42,6 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     public void setOnItemLongClickListener(OnItemLongClickListener listener){
         onItemLongClickListener = listener;
     }
-
-
 
     public static class ExampleViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageView;
@@ -87,7 +84,6 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
             });
         }
     }
-
 
     @NonNull
     @Override

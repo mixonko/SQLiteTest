@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.myapp.test.sqlitetest.Entity.Car;
+import com.myapp.test.sqlitetest.entity.Car;
 
 
 public class CarInfoActivity extends Activity implements View.OnClickListener {
@@ -29,8 +29,7 @@ public class CarInfoActivity extends Activity implements View.OnClickListener {
 
     private Button change;
     private Button save;
-
-
+ 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

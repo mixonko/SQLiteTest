@@ -16,8 +16,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.myapp.test.sqlitetest.Database.MyAppDatabase;
-import com.myapp.test.sqlitetest.Entity.Car;
+import com.myapp.test.sqlitetest.database.MyAppDatabase;
+import com.myapp.test.sqlitetest.entity.Car;
 import com.myapp.test.sqlitetest.adapter.ExampleAdapter;
 
 import java.util.ArrayList;

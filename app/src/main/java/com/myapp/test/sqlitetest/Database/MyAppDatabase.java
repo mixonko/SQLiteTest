@@ -1,25 +1,17 @@
-package com.myapp.test.sqlitetest.Database;
+package com.myapp.test.sqlitetest.database;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import com.myapp.test.sqlitetest.Dao.CarDao;
-import com.myapp.test.sqlitetest.Dao.ManufacturerDao;
-import com.myapp.test.sqlitetest.Dao.ModelDao;
-import com.myapp.test.sqlitetest.Entity.Car;
-import com.myapp.test.sqlitetest.Entity.Manufacturer;
-import com.myapp.test.sqlitetest.Entity.Model;
+import com.myapp.test.sqlitetest.dao.CarDao;
+import com.myapp.test.sqlitetest.entity.Car;
 
-@Database( entities = {Manufacturer.class, Model.class, Car.class}, version = 1 )
+@Database( entities = {Car.class}, version = 1 )
 public abstract class MyAppDatabase extends RoomDatabase {
 
     public static MyAppDatabase INSTANCE;
-
-    public abstract ManufacturerDao manufacturerDao();
-
-    public abstract ModelDao modelDao();
 
     public abstract CarDao carDao();
 
